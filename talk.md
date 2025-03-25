@@ -17,7 +17,7 @@ type: slide
   }
 </style>
 
-<!-- .slide: style="font-size: 30px;" -->
+<!-- .slide: style="font-size: 24px;" -->
 
 # Documentação bonita e organizada
 
@@ -28,7 +28,7 @@ slides: https://hackmd.io/@melissawm/python-floripa-2025
 
 ---
 
-## Pra começar...
+### Pra começar...
 
 - Quem _gosta_ de escrever documentação?
 - Quem escreve documentação no seu projeto/empresa?
@@ -37,7 +37,7 @@ slides: https://hackmd.io/@melissawm/python-floripa-2025
 
 ---
 
-## O que é documentação?
+### O que é documentação?
 
 - Narrative: tutorials, how-to guides, walkthroughs, books
 - Docstrings, code comments, code review
@@ -47,56 +47,107 @@ slides: https://hackmd.io/@melissawm/python-floripa-2025
 
 ---
 
-## Documentação vs. "Conteúdo"
+### Documentação vs. "Conteúdo"
 
 - Estamos afogados em "informação" e "conteúdo"
 - Fontes, reputação, objetivos: curadoria
 - Busca e arquitetura da informação
 - Perfis, linguagem, voz
 
-O objetivo é comunicar com outros seres humanos
+_O objetivo é comunicar com outros seres humanos_
 
-Identify who your reader is
-Profiles and user stories
-Accessibility
-Translations
-Bias and inclusion
+### Quem são seus leitores?
 
+- Perfis e _user stories_
+- Diferentes documentos para diferentes objetivos
+- Accessibilidade
+- Traduções
+- Vieses e inclusão
 
 ---
 
-## Como organizar documentação narrativa?
+### Como organizar documentação narrativa?
 
 - Pessoas gostam de encontrar informação rápido: livro vs. hipertexto
-- Signposts
-- Diataxis, every page is page one,
-- https://passo.uno/seven-action-model/
+- Sinalização: "Se você já conhece Python, pule para o Capítulo 2."
+- Busca
+- Links cruzados
 
 ---
 
-## Documentação de código: API e docstrings
+### Arquitetura da informação: DITA
 
-- "comments in code will get outdated"
-- Clean code
-- Why vs. what
-
----
-
-## Literate programming
+- DITA: _Darwin Information Typing Architecture_
+- Usa XML para criar conteúdo legível pelas máquinas
+- Conteúdo organizado por _tópicos_, cada um num arquivo XML.
+- Cada tópico tem um propósito: _Task_, _Concept_, _Reference_, _Glossary Entry_, e _Troubleshooting_.
 
 ---
 
-## Ferramentas: docs as code
+### Arquitetura da informação: Diatáxis
 
+![](https://diataxis.fr/_images/diataxis.png)
+
+---
+
+### Arquitetura da informação: EPPO
+
+![Captura de imagem_20250325_172248](https://hackmd.io/_uploads/BykYF9lpkl.png)
+
+---
+
+### Arquitetura da informação: Seven-action model
+
+https://passo.uno/seven-action-model/
+
+![](https://passo.uno/uploads/heptagon.png)
+
+---
+
+### Arquiteturas da informação
+
+- Não seja dogmático: adapte-se
+- Ferramentas diferentes para objetivos diferentes
+- Não otimize prematuramente!
+
+---
+
+### Documentação de código: API e docstrings
+
+- "Comentários vão ficar desatualizados": só se você não incluir documentação no seu processo de desenvolvimento.
+- _Clean code_ não significa que comentários são proibidos!
+- "O quê" vs. "Por quê"
+
+BOM: https://github.com/mkdocstrings/mkdocstrings/blob/main/src/mkdocstrings/_internal/extension.py#L213
+
+MAU: https://github.com/nasa/progpy/blob/master/src/progpy/composite_model.py
+
+---
+
+### DDD: Desenvolvimento guiado pela documentação
+
+- DDD (_Docs-driven development_): _from the perspective of a user, if a feature is not documented, then it doesn't exist, and if a feature is documented incorrectly, then it's broken._
+
+---
+
+### Programação literária (_Literate programming_)
+
+- Jupyter notebooks
+- MyST https://mystmd.org/guide
+
+---
+
+### Docs as code
+
+- Usar as mesmas ferramentas para documentação e código (texto puro, controle de versão, lint, testes, DocOps, code review, issues)
 - https://passo.uno/what-docs-as-code-means/
 - https://thisisimportant.net/posts/docs-as-code-broken-promise/
-- DDD (Docs-driven development): from the perspective of a user, if a feature is not documented, then it doesn't exist, and if a feature is documented incorrectly, then it's broken.
-- Technical writers: don’t forget about them!
-- Be careful with credit, authorship, and the limitations of your tools.
+- Escrita técnica: treinamento!
+- Cuidado com crédito, autoria, limitações das ferramentas.
 
 ---
 
-## Escrever e compilar
+### Escrever e compilar
 
 Markup language:
 reST, Markdown, MyST Markdown
@@ -191,6 +242,7 @@ Docs are living things, they will never be finished.
 
 
 ---
+
 ```graphviz
 digraph {
   compound=true
@@ -218,49 +270,6 @@ digraph {
   }
 }
 ```
-
----
-
-### Architecture of information
-
-
-DITA, or Darwin Information Typing Architecture, is a standard for writing, organizing, and publishing content. It's often used by technical writers to create content that can be reused across multiple platforms. 
-How DITA works 
-
-    DITA uses XML to create machine-readable content
-    DITA organizes content into topics and maps
-    DITA content is stored in a component content management system (CCMS)
-    DITA content can be published in multiple formats, including PDF, PowerPoint, and mobile 
-
-Benefits of DITA 
-
-    DITA helps to standardize and leverage content
-    DITA helps to improve collaboration
-    DITA helps to ensure content accuracy and traceability
-    DITA helps to increase the quality of content by standardizing it
-    DITA helps to allow content to be reused, published to multiple formats, and translated efficiently 
-
-DITA and CCMS
-A DITA content management system (CCMS) can help companies to manage, create, and publish content. 
-
-
----
-
-![](https://i.imgur.com/ij69tPh.png)
-
----
-
-<style>
-code.blue {
-  color: #337AB7 !important;
-}
-code.orange {
-  color: #F7A004 !important;
-}
-</style>
-
-- <code class="orange">onMessage('event')</code>: Register event listener
-- <code class="blue">sendMessage('event')</code>: Trigger event
 
 ---
 
@@ -280,7 +289,7 @@ type: slide
   }
 </style>
 
-<!-- .slide: style="font-size: 30px;" -->
+<!-- .slide: style="font-size: 24px;" -->
 
 # Documentação bonita e organizada
 
@@ -291,7 +300,7 @@ slides: https://hackmd.io/@melissawm/python-floripa-2025
 
 ---
 
-## Pra começar...
+### Pra começar...
 
 - Quem _gosta_ de escrever documentação?
 - Quem escreve documentação no seu projeto/empresa?
@@ -300,7 +309,7 @@ slides: https://hackmd.io/@melissawm/python-floripa-2025
 
 ---
 
-## O que é documentação?
+### O que é documentação?
 
 - Narrative: tutorials, how-to guides, walkthroughs, books
 - Docstrings, code comments, code review
@@ -310,56 +319,107 @@ slides: https://hackmd.io/@melissawm/python-floripa-2025
 
 ---
 
-## Documentação vs. "Conteúdo"
+### Documentação vs. "Conteúdo"
 
 - Estamos afogados em "informação" e "conteúdo"
 - Fontes, reputação, objetivos: curadoria
 - Busca e arquitetura da informação
 - Perfis, linguagem, voz
 
-O objetivo é comunicar com outros seres humanos
+_O objetivo é comunicar com outros seres humanos_
 
-Identify who your reader is
-Profiles and user stories
-Accessibility
-Translations
-Bias and inclusion
+### Quem são seus leitores?
 
+- Perfis e _user stories_
+- Diferentes documentos para diferentes objetivos
+- Accessibilidade
+- Traduções
+- Vieses e inclusão
 
 ---
 
-## Como organizar documentação narrativa?
+### Como organizar documentação narrativa?
 
 - Pessoas gostam de encontrar informação rápido: livro vs. hipertexto
-- Signposts
-- Diataxis, every page is page one,
-- https://passo.uno/seven-action-model/
+- Sinalização: "Se você já conhece Python, pule para o Capítulo 2."
+- Busca
+- Links cruzados
 
 ---
 
-## Documentação de código: API e docstrings
+### Arquitetura da informação: DITA
 
-- "comments in code will get outdated"
-- Clean code
-- Why vs. what
-
----
-
-## Literate programming
+- DITA: _Darwin Information Typing Architecture_
+- Usa XML para criar conteúdo legível pelas máquinas
+- Conteúdo organizado por _tópicos_, cada um num arquivo XML.
+- Cada tópico tem um propósito: _Task_, _Concept_, _Reference_, _Glossary Entry_, e _Troubleshooting_.
 
 ---
 
-## Ferramentas: docs as code
+### Arquitetura da informação: Diatáxis
 
+![](https://diataxis.fr/_images/diataxis.png)
+
+---
+
+### Arquitetura da informação: EPPO
+
+![Captura de imagem_20250325_172248](https://hackmd.io/_uploads/BykYF9lpkl.png)
+
+---
+
+### Arquitetura da informação: Seven-action model
+
+https://passo.uno/seven-action-model/
+
+![](https://passo.uno/uploads/heptagon.png)
+
+---
+
+### Arquiteturas da informação
+
+- Não seja dogmático: adapte-se
+- Ferramentas diferentes para objetivos diferentes
+- Não otimize prematuramente!
+
+---
+
+### Documentação de código: API e docstrings
+
+- "Comentários vão ficar desatualizados": só se você não incluir documentação no seu processo de desenvolvimento.
+- _Clean code_ não significa que comentários são proibidos!
+- "O quê" vs. "Por quê"
+
+BOM: https://github.com/mkdocstrings/mkdocstrings/blob/main/src/mkdocstrings/_internal/extension.py#L213
+
+MAU: https://github.com/nasa/progpy/blob/master/src/progpy/composite_model.py
+
+---
+
+### DDD: Desenvolvimento guiado pela documentação
+
+- DDD (_Docs-driven development_): _from the perspective of a user, if a feature is not documented, then it doesn't exist, and if a feature is documented incorrectly, then it's broken._
+
+---
+
+### Programação literária (_Literate programming_)
+
+- Jupyter notebooks
+- MyST https://mystmd.org/guide
+
+---
+
+### Docs as code
+
+- Usar as mesmas ferramentas para documentação e código (texto puro, controle de versão, lint, testes, DocOps, code review, issues)
 - https://passo.uno/what-docs-as-code-means/
 - https://thisisimportant.net/posts/docs-as-code-broken-promise/
-- DDD (Docs-driven development): from the perspective of a user, if a feature is not documented, then it doesn't exist, and if a feature is documented incorrectly, then it's broken.
-- Technical writers: don’t forget about them!
-- Be careful with credit, authorship, and the limitations of your tools.
+- Escrita técnica: treinamento!
+- Cuidado com crédito, autoria, limitações das ferramentas.
 
 ---
 
-## Escrever e compilar
+### Escrever e compilar
 
 Markup language:
 reST, Markdown, MyST Markdown
@@ -454,6 +514,7 @@ Docs are living things, they will never be finished.
 
 
 ---
+
 ```graphviz
 digraph {
   compound=true
@@ -481,49 +542,6 @@ digraph {
   }
 }
 ```
-
----
-
-### Architecture of information
-
-
-DITA, or Darwin Information Typing Architecture, is a standard for writing, organizing, and publishing content. It's often used by technical writers to create content that can be reused across multiple platforms. 
-How DITA works 
-
-    DITA uses XML to create machine-readable content
-    DITA organizes content into topics and maps
-    DITA content is stored in a component content management system (CCMS)
-    DITA content can be published in multiple formats, including PDF, PowerPoint, and mobile 
-
-Benefits of DITA 
-
-    DITA helps to standardize and leverage content
-    DITA helps to improve collaboration
-    DITA helps to ensure content accuracy and traceability
-    DITA helps to increase the quality of content by standardizing it
-    DITA helps to allow content to be reused, published to multiple formats, and translated efficiently 
-
-DITA and CCMS
-A DITA content management system (CCMS) can help companies to manage, create, and publish content. 
-
-
----
-
-![](https://i.imgur.com/ij69tPh.png)
-
----
-
-<style>
-code.blue {
-  color: #337AB7 !important;
-}
-code.orange {
-  color: #F7A004 !important;
-}
-</style>
-
-- <code class="orange">onMessage('event')</code>: Register event listener
-- <code class="blue">sendMessage('event')</code>: Trigger event
 
 ---
 
